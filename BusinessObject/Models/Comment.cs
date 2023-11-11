@@ -14,6 +14,8 @@ namespace BusinessObject.Models
         [Range(0, 5)]
         public int? Rating { get; set; }
 
+        public string MemberId { get; set; }
+        public Member Member { get; set; }
         public int ArticleId { get; set; }
         public Article Article { get; set; }
     }

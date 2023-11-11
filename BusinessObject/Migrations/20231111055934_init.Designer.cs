@@ -4,6 +4,7 @@ using DailyNews.BusinessObject.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DailyNews.BusinessObject.Migrations
 {
     [DbContext(typeof(DailyNewsContext))]
-    partial class DailyNewsContextModelSnapshot : ModelSnapshot
+    [Migration("20231111055934_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -451,18 +453,12 @@ namespace DailyNews.BusinessObject.Migrations
                     b.Property<DateTime>("CommentTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("MemberId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int?>("Rating")
                         .HasColumnType("int");
 
                     b.HasKey("CommentId");
 
                     b.HasIndex("ArticleId");
-
-                    b.HasIndex("MemberId");
 
                     b.ToTable("Comments");
                 });
@@ -540,26 +536,26 @@ namespace DailyNews.BusinessObject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "77cbb596-f510-4b51-a89e-b7a4535a6ee1",
+                            Id = "62c17baa-fccf-4bfc-8e78-3af160893944",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a2291019-9eac-4afe-8c75-f2b58a1ea1a5",
+                            ConcurrencyStamp = "62de893a-33aa-415d-8d72-8097a40d0636",
                             Email = "admin@dailynews.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DAILYNEWSNEWS.COM",
                             NormalizedUserName = "ADMIN@DAILYNEWSNEWS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJgng3rxR9pn7cXdf/SIOIfMBVWTO2o3865UD3IMJuW+2aKvSxDfDE2ys5ZPxyE69g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHHl0WFShoqG8514sCKfSJMhYKNjGTbu9JOmjZ2Yx5aT61kAMlXErbYB7H36Ekod4w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ecdff81b-aae2-4fe9-820d-ae245d9bebf8",
+                            SecurityStamp = "d5bf1ed9-834b-4ba4-abbf-4d64d19738ad",
                             TwoFactorEnabled = false,
                             UserName = "admin@dailynews.com"
                         },
                         new
                         {
-                            Id = "d1029da4-59f0-4643-ab94-90642bf89062",
+                            Id = "737cba88-c434-4401-99d1-38db63ab83f7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "13c5f42d-e233-4349-a3a2-ed2094aa048c",
+                            ConcurrencyStamp = "cb32e9f2-6de6-4340-af30-8138f1be8be8",
                             Email = "writer@dailynews.com",
                             EmailConfirmed = false,
                             FirstName = "Writer",
@@ -567,17 +563,17 @@ namespace DailyNews.BusinessObject.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "WRITER@DAILYNEWSNEWS.COM",
                             NormalizedUserName = "WRITER@DAILYNEWSNEWS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA+y4W1GlpkUlc/xU8LfHbvMfdUEfId9X3PoQIzgzTnKk4IcJkw+wO7SjTkm2+wdMw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELSo6eNmBbEUzqLEkwcrjXHTh1yj62O/dkGr76HEhhlrkhE3AF8fM7XElkcf5g4DaQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8f51bed5-5d4a-45d9-9d38-348cf96159a8",
+                            SecurityStamp = "5bc223fa-e050-4624-b588-645aac51570f",
                             TwoFactorEnabled = false,
                             UserName = "writer@dailynews.com"
                         },
                         new
                         {
-                            Id = "594a123f-674c-4c8d-add8-0a4d517558a5",
+                            Id = "2447c012-3010-4158-90b7-cc8fbc8df6cc",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9a841e95-3429-4af0-8618-5b731df5fc45",
+                            ConcurrencyStamp = "8f1516de-9d90-40a8-8f62-4c94cb2720e2",
                             Email = "user@dailynews.com",
                             EmailConfirmed = false,
                             FirstName = "User",
@@ -585,9 +581,9 @@ namespace DailyNews.BusinessObject.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@DAILYNEWSNEWS.COM",
                             NormalizedUserName = "USER@DAILYNEWSNEWS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELi/GMYaXWG+0Koa+FkQrBpDDF7NtwLPg+MkJAYjb2Y248D7EXKuAHUfSxR6qybDGQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELTA/t1E1JoX1DERLr+DfX/AWLb4Zp1Xv20WEfk0uTu4Ff8pP3BE7pCifd9WSqV2Hw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bd98d380-216d-4474-9dc0-cc0e48bb2e96",
+                            SecurityStamp = "7d3f76c8-68e5-4ef7-86fc-8c7554eb2c8c",
                             TwoFactorEnabled = false,
                             UserName = "user@dailynews.com"
                         });
@@ -622,29 +618,29 @@ namespace DailyNews.BusinessObject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ea084acf-14ef-4138-96be-1b3db76e405b",
-                            ConcurrencyStamp = "a787bf9e-62d6-465c-9030-38087dfb0412",
+                            Id = "b8f23bd7-b4a0-4366-b1f6-e6e1dd591c2c",
+                            ConcurrencyStamp = "72f812a1-5ebf-4248-a68c-64a86276588d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "a8dff705-c4e8-4a75-9090-22910978b7aa",
-                            ConcurrencyStamp = "1208b015-b411-421c-94cd-29ab2971382c",
+                            Id = "a6507381-b326-4799-be6a-f16fa32fbf2a",
+                            ConcurrencyStamp = "dd4c65c9-1392-4cf8-a5ad-a07c9b8c67cb",
                             Name = "Writer",
                             NormalizedName = "WRITER"
                         },
                         new
                         {
-                            Id = "cc84ea3c-3288-4f5f-bf25-09444f232dd9",
-                            ConcurrencyStamp = "831e98d5-38e8-4c24-a739-477ecabcab97",
+                            Id = "76a6d947-6a85-4514-8655-ef3a7facbb3c",
+                            ConcurrencyStamp = "c211937f-6501-4dde-a3e2-50e59d3a1a45",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "b12f815d-6da0-4fb7-a3e9-b05fa8331eaf",
-                            ConcurrencyStamp = "a52339aa-ccfb-4351-89b1-3b3b99519e94",
+                            Id = "6e97852d-2d43-4877-8c3e-59a3485f33a5",
+                            ConcurrencyStamp = "54a6821f-d0c5-4c3e-a2c6-9d95c329b422",
                             Name = "Guest",
                             NormalizedName = "GUEST"
                         });
@@ -739,18 +735,18 @@ namespace DailyNews.BusinessObject.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "77cbb596-f510-4b51-a89e-b7a4535a6ee1",
-                            RoleId = "ea084acf-14ef-4138-96be-1b3db76e405b"
+                            UserId = "62c17baa-fccf-4bfc-8e78-3af160893944",
+                            RoleId = "b8f23bd7-b4a0-4366-b1f6-e6e1dd591c2c"
                         },
                         new
                         {
-                            UserId = "d1029da4-59f0-4643-ab94-90642bf89062",
-                            RoleId = "a8dff705-c4e8-4a75-9090-22910978b7aa"
+                            UserId = "737cba88-c434-4401-99d1-38db63ab83f7",
+                            RoleId = "a6507381-b326-4799-be6a-f16fa32fbf2a"
                         },
                         new
                         {
-                            UserId = "594a123f-674c-4c8d-add8-0a4d517558a5",
-                            RoleId = "cc84ea3c-3288-4f5f-bf25-09444f232dd9"
+                            UserId = "2447c012-3010-4158-90b7-cc8fbc8df6cc",
+                            RoleId = "76a6d947-6a85-4514-8655-ef3a7facbb3c"
                         });
                 });
 
@@ -792,15 +788,7 @@ namespace DailyNews.BusinessObject.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BusinessObject.Models.Member", "Member")
-                        .WithMany()
-                        .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Article");
-
-                    b.Navigation("Member");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

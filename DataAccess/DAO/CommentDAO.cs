@@ -60,6 +60,7 @@ namespace DailyNews.DataAccess.DAO
                     CommentTime = request.CommentTime,
                     Rating = request.Rating,
                     ArticleId = request.ArticleId,
+                    MemberId = request.MemberId,
                 };
 
                 context.Comments.Add(comment);
