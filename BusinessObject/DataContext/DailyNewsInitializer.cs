@@ -397,6 +397,7 @@ namespace DailyNews.BusinessObject.DataContext
                     NormalizedUserName = "ADMIN@DAILYNEWSNEWS.COM",
                     EmailConfirmed = false,
                     FirstName = "Admin",
+                    Actice = true,
                     AccessFailedCount = 0,
                     PasswordHash = hasher.HashPassword(null, "DailyNews@123")
                 },
@@ -410,6 +411,7 @@ namespace DailyNews.BusinessObject.DataContext
                     EmailConfirmed = false,
                     FirstName = "Writer",
                     LastName = "Isaac",
+                    Actice = true,
                     AccessFailedCount = 0,
                     PasswordHash = hasher.HashPassword(null, "DailyNews@123")
                 },
@@ -423,8 +425,9 @@ namespace DailyNews.BusinessObject.DataContext
                     EmailConfirmed = false,
                     FirstName = "User",
                     LastName = "Benjamin",
+                    Actice = true,
                     AccessFailedCount = 0,
-                    PasswordHash = hasher.HashPassword(null, "DailyNews@123")
+                    PasswordHash = hasher.HashPassword(null, "DailyNews@123"),
                 }
             };
 
