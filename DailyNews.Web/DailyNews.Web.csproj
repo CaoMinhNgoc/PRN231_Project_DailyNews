@@ -11,6 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BusinessObject\DailyNews.BusinessObject.csproj" />
+    <ProjectReference Include="..\DailyNews.API\DailyNews.API.csproj" />
+    <ProjectReference Include="..\DataAccess\DailyNews.DataAccess.csproj" />
+    <ProjectReference Include="..\Repository\DailyNews.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
