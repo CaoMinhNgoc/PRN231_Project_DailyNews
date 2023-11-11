@@ -12,18 +12,29 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DailyNews.Web</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img alt="Báo thanh niên" src="https://static.thanhnien.com.vn/thanhnien.vn/image/logo.svg" style="width= 220px; height=63px; " >
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1 flex-row-reverse">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Account management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Article management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">My article</a>
                         </li>
                     </ul>
                 </div>
@@ -36,11 +47,58 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="bg-primary text-white text-center text-lg-start" style="color: black !important; background: #f5f5f5 !important;">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5 class="text-uppercase">BÁO THANH NIÊN</h5>
+
+                    <p>
+                        Báo Thanh Niên là một tờ nhật báo Việt Nam có trụ sở tại Thành phố Hồ Chí Minh. 
+                        Đây là một trong những tờ báo có số lượng phát hành lớn nhất Việt Nam với 300.000 bản/ngày. 
+                        Ngày 3 tháng 1 năm 1986, báo ra số đầu tiên với tên gọi Tuần tin Thanh Niên trực thuộc Hội Liên hiệp Thanh niên Việt Nam
+                    </p>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="container">
+                        <form action="">
+                            <div class="row">
+                                <div class="col-auto mb-4 mb-md-0">
+                                    <p class="pt-2">
+                                        <strong>Sign up for our news</strong>
+                                    </p>
+                                </div>
+                                <div class="col-md-5 col-12 mb-4 mb-md-0">
+                                    <div class="form-outline mb-4">
+                                        <input type="email" placeholder="Email Address" id="form5Example25" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-auto mb-4 mb-md-0">
+                                    <button type="submit" class="btn btn-primary mb-4">
+                                        Subscribe
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: blue">
+            <a class="text-white" href="#">Giấy phép xuất bản số 110/GP - BTTTT cấp ngày 24.3.2020 © 2003-2023</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    @*<footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - DailyNews.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
