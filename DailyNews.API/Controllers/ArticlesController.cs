@@ -3,6 +3,7 @@ using DailyNews.DataAccess.DTO;
 using DailyNews.Repository.IRepository;
 using DailyNews.Repository.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace DailyNews.API.Controllers
 {
@@ -13,16 +14,47 @@ namespace DailyNews.API.Controllers
         private readonly IArticleRepository repository = new ArticleRepository();
 
         [HttpGet]
+        [EnableQuery]
         public ActionResult<IEnumerable<Article>> GetAllArticles() => repository.GetArticles();
 
         [HttpGet("{id}")]
+        [EnableQuery]
+
         public ActionResult<Article> GetArticleById(int id) => repository.GetArticleById(id);
 
         [HttpGet]
+        [EnableQuery]
         public ActionResult<IEnumerable<Article>> GetPublishedArticles() => repository.GetPublishedArticles();
 
         [HttpGet]
+        [EnableQuery]
         public ActionResult<IEnumerable<Article>> GetUnublishedArticles() => repository.GetUnpublishedArticles();
+
+        [HttpGet("{categoryId}")]
+        [EnableQuery]
+        public ActionResult<IEnumerable<Article>> GetArticlesByCategoryId(int categoryId)
+        {
+            var articles = repository.GetArticlesByCategoryId(categoryId);
+            if (articles == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(articles);
+        }
+
+        [HttpGet("{categoryName}")]
+        [EnableQuery]
+        public ActionResult<IEnumerable<Article>> GetArticlesByCategoryName(string categoryName)
+        {
+            var articles = repository.GetArticlesByCategoryName(categoryName);
+            if (articles == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(articles);
+        }
 
         [HttpPost]
         public IActionResult AddArticle([FromBody] ArticleRequestDTO request)

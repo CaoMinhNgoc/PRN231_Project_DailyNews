@@ -15,5 +15,9 @@ namespace DailyNews.Repository.Repository
         public Article GetArticleById(int id) => articleDAO.GetArticleById(id);
         public List<Article> GetPublishedArticles() => articleDAO.GetPublishedArticles();
         public List<Article> GetUnpublishedArticles() => articleDAO.GetUnpublishedArticles();
+
+        public List<Article> GetArticlesByCategoryId(int categoryId) => articleDAO.GetArticlesByCategoryId(categoryId);
+
+        public List<Article> GetArticlesByCategoryName(string categoryName) => articleDAO.GetArticlesByCategoryName(categoryName);
     }
 }

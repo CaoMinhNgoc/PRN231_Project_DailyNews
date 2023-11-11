@@ -37,6 +37,31 @@ namespace DailyNews.DataAccess.DAO
                 throw new Exception(e.Message);
             }
         }
+        public List<Article> GetArticlesByCategoryId(int categoryId)
+        {
+            try
+            {
+                var articles = context.Articles.Where(x => x.CategoryId == categoryId).ToList();
+                return articles;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public List<Article> GetArticlesByCategoryName(string categoryName)
+        {
+            try
+            {
+                var articles = context.Articles.Where(x => x.Category.CategoryName.Trim().ToLower().Contains(categoryName.Trim().ToLower())).ToList();
+
+                return articles;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
         public List<Article> GetPublishedArticles()
         {
             try
