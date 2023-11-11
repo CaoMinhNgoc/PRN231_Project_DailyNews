@@ -12,4 +12,12 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\Category\" />
+    <Folder Include="ViewModels\Article\" />
+    <Folder Include="ViewModels\Comment\" />
+    <Folder Include="ViewModels\Member\" />
+    <Folder Include="ViewModels\Role\" />
+  </ItemGroup>
+
 </Project>
