@@ -7,6 +7,8 @@ namespace DailyNews.Repository.IRepository
     {
         public List<Article> GetArticles();
         public Article GetArticleById(int id);
+        public List<Article> GetArticlesByCategoryId(int categoryId);
+        public List<Article> GetArticlesByCategoryName(string categoryName);
         public List<Article> GetPublishedArticles();
         public List<Article> GetUnpublishedArticles();
         public void AddArticle(ArticleRequestDTO request);
