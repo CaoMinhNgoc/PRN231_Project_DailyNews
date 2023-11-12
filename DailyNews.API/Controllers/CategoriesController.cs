@@ -1,19 +1,27 @@
 ﻿using BusinessObject.Models;
+using DailyNews.BusinessObject.DTO;
 using DailyNews.DataAccess.DTO;
 using DailyNews.Repository.IRepository;
 using DailyNews.Repository.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
 
 namespace DailyNews.API.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class CategoriesController : ODataController 
     {
         private readonly ICategoryRepository repository = new CategoryRepository();
 
         [HttpGet]
+        [EnableQuery]
         public ActionResult<IEnumerable<Category>> GetAllCategories() => repository.GetCategories();
+
+        [HttpGet]
+        [EnableQuery]
+        public ActionResult<IEnumerable<CategoryDTO_withArticles>> GetAllCategoriesWithArticle() => repository.GetCategoriesWithArticle();
 
         [HttpGet("{id}")]
         public ActionResult<Category> GetCategoryById(int id)

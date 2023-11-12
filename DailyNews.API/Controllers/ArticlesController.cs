@@ -4,18 +4,23 @@ using DailyNews.Repository.IRepository;
 using DailyNews.Repository.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
 
 namespace DailyNews.API.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class ArticlesController : ControllerBase
+    public class ArticlesController : ODataController
     {
         private readonly IArticleRepository repository = new ArticleRepository();
 
         [HttpGet]
         [EnableQuery]
         public ActionResult<IEnumerable<Article>> GetAllArticles() => repository.GetArticles();
+
+        [HttpGet]
+        [EnableQuery]
+        public ActionResult<IEnumerable<Article>> GetAllArticlesSortByCmt() => repository.GetArticlesSortByCmt();
 
         [HttpGet("{id}")]
         [EnableQuery]
