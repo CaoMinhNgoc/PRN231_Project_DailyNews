@@ -12,7 +12,7 @@
             dataType: "json",
             success: function (result, status, xhr) {
                 $.each(result, function (index, value) {
-                    $("#articles").append($("<a class=\"article\" href=\"#\">"));
+                    $("#articles").append($("<a class=\"article\" href=\"/Article/Detail?articleID=" + value["articleId"] + "\">"));
                     $("#articles .article").last().append($("<div class=\"title\">"));
                     $("#articles .article").last().append($("<div class=\"des\">"));
                     $("#articles .title").last().html(value["title"]);

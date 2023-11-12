@@ -16,7 +16,7 @@
             dataType: "json",
             success: function (result, status, xhr) {
                 $.each(result, function (index, value) {
-                    $("#current-article").append($("<a class=\"cur-article\" href=\"#\">"))
+                    $("#current-article").append($("<a class=\"cur-article\" href=\"Article/Detail?articleID=" + value["articleId"] + "\">"));
                     $("#current-article .cur-article").last().append("<div class=\"cur-article-title\">");
                     $("#current-article .cur-article").last().append("<div class=\"cur-article-des\">");
                     $("#current-article .cur-article-title").last().html(value["title"]);
@@ -38,7 +38,7 @@
             dataType: "json",
             success: function (result, status, xhr) {
                 $.each(result, function (index, value) {
-                    $("#most-read-article").append($("<a class=\"most-read-article\" href=\"#\">"))
+                    $("#most-read-article").append($("<a class=\"most-read-article\" href=\"/Article/Detail?articleID=" + value["articleId"] + "\">"));
                     $("#most-read-article .most-read-article").last().append("<div class=\"most-read-article-title\">");
                     $("#most-read-article .most-read-article").last().append("<div class=\"most-read-article-des\">");
                     $("#most-read-article .most-read-article-title").last().html(value["title"]);
@@ -62,7 +62,7 @@
                 $.each(result, function (index, value) {
                     $("#articles").append($("<div class=\"category\">"));
                     $("#articles .category").last().append($("<div class=\"category-name\">"));
-                    $("#articles .category").last().append($("<a class=\"see-more\" href=\"#\">"));
+                    $("#articles .category").last().append($("<a class=\"see-more\" href=\"/Home/Articles?categoryID=" + value["categoryId"] + "\">"))
                     $("#articles .see-more").last().html("See more");
                     $("#articles .category-name").last().html(value["categoryName"]);
                     $("#articles .category").last().append($("<div class=\"category-articles\">"));
@@ -70,7 +70,7 @@
                     var listArticle = [].slice.call(value["articles"]);
                     var x = listArticle.length >= 2 ? 2 : listArticle.length; console.log(x);
                     for (var i = 0; i < x; i++) {
-                        $("#articles .category-articles").last().append($("<a class=\"article\" href=\"\">"));
+                        $("#articles .category-articles").last().append($("<a class=\"article\" href=\"Article/Detail?articleID=" + listArticle[i]["articleId"] + "\">"));
                         $("#articles .article").last().append($("<div class=\"article-title\">").html(listArticle[i]["title"]));
                         $("#articles .article").last().append($("<div class=\"article-description\">").html(listArticle[i]["shortDescription"]));
                     }

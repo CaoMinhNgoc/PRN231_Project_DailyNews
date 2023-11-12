@@ -9,9 +9,9 @@ namespace DailyNews.Web.Controllers
             return View();
         }
 
-        public IActionResult Detail()
+        public IActionResult Detail(int articleID)
         {
-            return View();
+            return View(articleID);
         }
     }
 }
