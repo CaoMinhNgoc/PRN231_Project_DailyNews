@@ -1,10 +1,12 @@
-﻿$(document).ready(function (){
+﻿$(document).ready(function () {
+    var articleID = document.getElementById("articleID").innerHTML;
+
     ShowArticleDetail();
     ShowArticleComments();
 
     function ShowArticleDetail() {
         $.ajax({
-            url: "http://localhost:5166/api/Articles/GetArticleById/16",
+            url: "http://localhost:5166/api/Articles/GetArticleById/" + articleID,
             type: "get",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -21,7 +23,7 @@
 
     function ShowArticleComments() {
         $.ajax({
-            url: "http://localhost:5166/api/Comments/GetCommentsByArticleId/16",
+            url: "http://localhost:5166/api/Comments/GetCommentsByArticleId/" + articleID,
             type: "get",
             contentType: "application/json; charset=utf-8",
             dataType: "json",

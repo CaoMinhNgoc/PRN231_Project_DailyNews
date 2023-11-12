@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="~/css/Home/articles.css" rel="stylesheet">
+
+</head>
+<body>
+    <div id="categoryID" style="display: none;">@Model</div>
+    <div class="container-fluid">
+        <div id="title">
+
+        </div>
+        <hr style="height: 2px;" />
+        <div class="main-container d-flex">
+            <div class="article-list">
+                <div id="articles">
+                    @*<a class="article" href="">
+                        <div class="title"></div>
+                        <div class="des"></div>
+                    </a>*@
+                </div>
+            </div>
+            <div class="action">
+                <div class="search">
+                    <input id="search-title" type="text" placeholder="Title" value=""/>
+                    <button id="btn-search">Search</button>
+                </div>
+                <div class="sort">
+                    <p>Sort type:</p>
+                    <input type="radio" name="sort" value="default" /> Default <br />
+                    <input type="radio" name="sort" value="a-z" /> A-Z<br />
+                    <input type="radio" name="sort" value="z-a" /> Z-A<br />
+                    <input type="radio" name="sort" value="asc" /> Created date asc<br />
+                    <input type="radio" name="sort" value="desc" /> Created date desc<br />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/articles.js"></script>
+
+</html>

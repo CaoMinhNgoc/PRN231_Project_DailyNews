@@ -10,7 +10,7 @@
             dataType: "json",
             success: function (result, status, xhr) {
                 $.each(result, function (index, value) {
-                    $("#category-header").append($("<a class=\"cate\" href=\"#\">"))
+                    $("#category-header").append($("<a class=\"cate\" href=\"/Home/Articles?categoryID=" + value["categoryId"] +"\">"))
                     $("#category-header .cate").last().html(value["categoryName"]);
                 })
             },
