@@ -41,6 +41,11 @@
             </div>
         </nav>
     </header>
+    <div class="container-fluid">
+        <div class="category-header" id="category-header">
+        </div>
+        <hr style="background: black; padding: 0; margin: 5px 0 0 0;" />
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -102,6 +107,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/js/header.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
