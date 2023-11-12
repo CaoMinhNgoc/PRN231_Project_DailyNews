@@ -18,6 +18,11 @@ namespace DailyNews.Web.Controllers
             return View();
         }
 
+        public IActionResult Articles(int categoryID)
+        {
+            return View(categoryID);
+        }
+
         public IActionResult Privacy()
         {
             return View();

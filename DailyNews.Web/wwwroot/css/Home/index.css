@@ -12,7 +12,7 @@ ol, ul {
 }
 
 /*category header section*/
-.category-header{
+/*.category-header{
     display: flex;
 }
 
@@ -27,7 +27,7 @@ ol, ul {
 
 .cate:hover{
     background: #f5f5f5;
-}
+}*/
 
 /*home focus section*/
 .home-focus{
