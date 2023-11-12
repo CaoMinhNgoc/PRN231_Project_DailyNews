@@ -20,20 +20,53 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="category">
-
+        <div class="category-header" id="category-header">
+            <div class="cate">Politics</div>
         </div>
+
+        <hr style="background: black; padding: 0; margin: 5px 0 0 0;"/>
+
+        <div class="home-focus-title d-flex">
+            <div class="current-articles">Tin mới nhất</div>
+            <div class="most-read-articles">Đọc nhiều nhất</div>
+        </div>
+
         <div class="home-focus">
-            <div class="left">
-
+            <div class="current-articles" id="current-article">
+                @*<a class="cur-article" href="">
+                    <div class="cur-article-title"></div>
+                    <div class="cur-article-des"></div>
+                </a>*@
             </div>
-            <div class="right">
-
+            <div class="most-read-articles" id="most-read-article">
+                @*<a class="most-read-article" href="">
+                    <div class="most-read-article-title"></div>
+                    <div class="most-read-article-des"></div>
+                </a>*@
             </div>
         </div>
-        <div class="articles">
 
+        <div class="hr position-relative">
+            <div class="hr-txt position-absolute">
+                CATEGORY
+            </div>
+        </div>
+
+        <div id="articles">
+            @*<div class="category">
+                <div class="category-name"></div>
+                <div class="category-articles">
+                    <a class="article" href="#">
+                        <div class="article-title"></div>
+                        <div class="article-description"></div>
+                    </a>
+                </div>
+            </div>*@
         </div>
     </div>
 </body>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/homepage.js"></script>
+
 </html>

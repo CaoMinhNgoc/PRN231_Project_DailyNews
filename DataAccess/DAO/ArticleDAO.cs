@@ -1,4 +1,6 @@
-﻿using BusinessObject.Models;
+﻿using System;
+using System.Reflection.Metadata.Ecma335;
+using BusinessObject.Models;
 using DailyNews.BusinessObject.DataContext;
 using DailyNews.DataAccess.DTO;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +27,21 @@ namespace DailyNews.DataAccess.DAO
                 throw new Exception(e.Message);
             }
         }
+
+        //luu y la phai truyen vao list article co comment
+        public List<Article> SortArticleByCommentCount(List<Article> articles)
+        {
+            try
+            {
+                articles.Sort((a, b) => a.Comments.Count.CompareTo(b.Comments.Count));
+                return articles;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public Article GetArticleById(int id)
         {
             try
